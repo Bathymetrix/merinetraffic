@@ -3,9 +3,9 @@
 
 ### _______________________________________
 ### KML Winnowing for "Custom Area" imports
-### _______________________________________
 
-### `winnow_last_50_gps_kml` trims station `position.kml` files to the last 50 unique GPS points
+### Script: `winnow_last_50_gps_kml`
+### Result: trims station `position.kml` files to the last 50 unique GPS points
 
 ### What It Does
 - Reads KML data from `<Folder id="GPS points">`.
