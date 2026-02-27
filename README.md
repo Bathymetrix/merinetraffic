@@ -1,9 +1,9 @@
 # merinetraffic
 # Tools to interface MERMAIDs with MarineTraffic.com
 
-## ___________________________________________________________________
+## _______________________________________
 ## KML Winnowing for "Custom Area" imports
-## ___________________________________________________________________
+## _______________________________________
 
 ## `winnow_last_50_gps_kml` trims station `position.kml` files to the last 50 unique GPS points
 
