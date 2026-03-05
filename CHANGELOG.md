@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog, and this project follows Semantic Versioning.
 
+## [0.1.1] - 2026-03-05
+
+### Changed
+- Output placemark datetime format is now `DD-Mon-YYYY HH:MM` (for both KML and SOM input flows).
+- Output filename source separator uses a single underscore before source tag:
+  - `last_50_gps_<STATION>_src-kml.kml`
+  - `last_50_gps_<STATION>_src-som-all.kml`
+- Script is now named `gps_winnower.py` in usage/docs.
+
 ## [0.1.0] - 2026-03-04
 
 ### Added

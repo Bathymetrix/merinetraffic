@@ -267,3 +267,40 @@
 
 ### Docs
 - Updated README to document `--version`, `VERSION`, and `CHANGELOG.md`.
+
+### (output date format update)
+
+### Name datetime format
+- Updated output `<Placemark><name>` datetime rendering to day-first month-text format:
+  - `DD-Mon-YYYY HH:MM`
+- Example output: `P0006 - 29-Oct-2024 11:40`.
+
+### Notes
+- Preserved time component for point precision.
+- Applied to both KML-source and SOM-source output paths.
+
+### (version bump)
+
+### Release metadata
+- Bumped `VERSION` from `0.1.0` to `0.1.1`.
+- Added `0.1.1` entry to `CHANGELOG.md` dated `2026-03-05`.
+
+### Changelog highlights
+- Output datetime format changed to `DD-Mon-YYYY HH:MM`.
+- Output filename source separator standardized to single underscore (`_src-...`).
+- Script usage/docs aligned to `gps_winnower.py`.
+
+### (output prefix rename without version bump)
+
+### Naming update
+- Changed output filename prefix from `last_50_gps_` to `recent_gps_`.
+- New pattern:
+  - `recent_gps_<STATION>_src-kml.kml`
+  - `recent_gps_<STATION>_src-som-all.kml`
+
+### Scope
+- Updated `gps_winnower.py` filename builder.
+- Updated README examples/documentation.
+
+### Versioning
+- `VERSION` intentionally left unchanged at `0.1.1` per request.

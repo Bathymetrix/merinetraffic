@@ -51,7 +51,7 @@ python3 gps_winnower.py --som-all --som-url "https://geoweb.princeton.edu/people
 - Keep most recent points after dedupe.
 - Default point count is 50 (`--limit 50`).
 - Output `<name>` format:
-  - `STATION - YYYY-MM-DD HH:MM`
+  - `STATION - DD-Mon-YYYY HH:MM`
 
 ### Station Code Rule
 Station code is always 5 characters, derived from document/station naming conventions.
@@ -80,12 +80,12 @@ Examples:
 ### Output Behavior by Mode
 1. Single KML mode (`input_kml`)
 - `-o` omitted:
-  - writes next to input as `last_50_gps_<STATION>_src-kml.kml`
+  - writes next to input as `recent_gps_<STATION>_src-kml.kml`
 - `-o` is `.kml` path:
   - writes exactly that file
 - `-o` is directory path:
   - creates directory if needed
-  - writes `last_50_gps_<STATION>_src-kml.kml` inside
+  - writes `recent_gps_<STATION>_src-kml.kml` inside
 
 2. Local batch mode (`-p`)
 - `-o` omitted:
@@ -105,13 +105,13 @@ Examples:
 
 ### Output Naming Convention
 - KML source output:
-  - `last_50_gps_<STATION>_src-kml.kml`
+  - `recent_gps_<STATION>_src-kml.kml`
 - SOM source output:
-  - `last_50_gps_<STATION>_src-som-all.kml`
+  - `recent_gps_<STATION>_src-som-all.kml`
 
 Examples:
-- `last_50_gps_R0061_src-kml.kml`
-- `last_50_gps_R0061_src-som-all.kml`
+- `recent_gps_R0061_src-kml.kml`
+- `recent_gps_R0061_src-som-all.kml`
 
 ### Embedded KML Provenance Metadata
 Generated KML includes `Document/ExtendedData` keys:

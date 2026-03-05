@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Core winnower logic for MERMAID KML positional metadata"
+"""Core winnower logic for MERMAID KML positional metadata."""
 
 from __future__ import annotations
 
@@ -48,7 +48,11 @@ class GPSKMLWinnower:
 
     @staticmethod
     def build_default_output_filename(station: str, source_tag: str) -> str:
-        return f"last_50_gps_{station}_src-{source_tag}.kml"
+        return f"recent_gps_{station}_src-{source_tag}.kml"
+
+    @staticmethod
+    def format_output_datetime(dt: datetime) -> str:
+        return dt.strftime("%d-%b-%Y %H:%M")
 
     @staticmethod
     def extract_station_code(document_name: str) -> str:
@@ -160,13 +164,13 @@ class GPSKMLWinnower:
                 out_name = cloned.find("k:name", NS)
                 if out_name is None:
                     out_name = ET.SubElement(cloned, f"{{{KML_NS}}}name")
-                out_name.text = f"{station} - {dt.strftime('%Y-%m-%d %H:%M')}"
+                out_name.text = f"{station} - {self.format_output_datetime(dt)}"
                 out_folder.append(cloned)
                 continue
 
             placemark = ET.SubElement(out_folder, f"{{{KML_NS}}}Placemark")
             out_name = ET.SubElement(placemark, f"{{{KML_NS}}}name")
-            out_name.text = f"{station} - {dt.strftime('%Y-%m-%d %H:%M')}"
+            out_name.text = f"{station} - {self.format_output_datetime(dt)}"
             visibility = ET.SubElement(placemark, f"{{{KML_NS}}}visibility")
             visibility.text = "1"
             style_url = ET.SubElement(placemark, f"{{{KML_NS}}}styleUrl")
